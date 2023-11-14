@@ -6,50 +6,48 @@ import pickle
 import hashlib
 
 
-# Путь к основной папке, где будут храниться кеши
 CACHE_FOLDER_PATH = "caches"
 
-# Создаем каталог для хранения кешей, если его еще нет
 os.makedirs(CACHE_FOLDER_PATH, exist_ok=True)
 
 
-def get_cache_path(anime_path):
-    # Генерируем уникальный путь для кеша на основе хэша пути к аниме
-    hash_object = hashlib.md5(anime_path.encode())
+def get_cache_path(cache_path):
+    # Генерируем уникальный путь для кеша на основе хэша пути
+    hash_object = hashlib.md5(cache_path.encode())
     hash_str = hash_object.hexdigest()
     return os.path.join(CACHE_FOLDER_PATH, f"cache_{hash_str}.pkl")
 
 
-def load_cache(anime_path, max_cache_len):
-    cache_path = get_cache_path(anime_path)
+def load_cache(cache_path, max_cache_len):
+    cache_path = get_cache_path(cache_path)
     try:
         with open(cache_path, "rb") as cache_file:
             return pickle.load(cache_file)
     except FileNotFoundError:
         return deque(maxlen=max_cache_len)
     except Exception as e:
-        print(f"Ошибка при загрузке кеша для {anime_path}: {e}")
+        print(f"Ошибка при загрузке кеша для {cache_path}: {e}")
         return deque(maxlen=max_cache_len)
 
 
-def save_cache(anime_path, cache):
-    cache_path = get_cache_path(anime_path)
+def save_cache(cache_path, cache):
+    cache_path = get_cache_path(cache_path)
     try:
         with open(cache_path, "wb") as cache_file:
             pickle.dump(cache, cache_file)
     except Exception as e:
-        print(f"Ошибка при сохранении кеша для {anime_path}: {e}")
+        print(f"Ошибка при сохранении кеша для {cache_path}: {e}")
 
 
 def start_posting():
-    # Выбираем аниме на основе весов
-    choice = random.choices(config.anime_list, weights=[item[2] for item in config.anime_list], k=1)[0]
+    # Выбираем путь на основе весов
+    choice = random.choices(config.my_list, weights=[item[2] for item in config.my_list], k=1)[0]
     print(choice)
 
-    # Получаем список файлов в выбранном каталоге аниме
+    # Получаем список файлов в выбранном каталоге
     files = os.listdir(choice[1])
 
-    # Получаем или создаем кеш для данного пути аниме
+    # Получаем или создаем кеш для данного пути
     cache = load_cache(choice[1], choice[3])
 
     # Инициализируем пустой список для хранения выбранных файлов
