@@ -49,7 +49,7 @@ def start_posting():
 
     if choice[3].lower() == 'auto':
         total_files = len(files)
-        max_cache_size = int(0.9 * total_files) if total_files > 100 else total_files - 10
+        max_cache_size = int(0.9 * total_files) if total_files > 100 else int(0.9 * total_files) - 10
     else:
         max_cache_size = choice[3]
         
@@ -67,7 +67,7 @@ def start_posting():
         if file not in out and file not in cache and os.path.isfile(file):
             out.append(file)
 
-    while len(cache) > choice[3] - 10:
+    while len(cache) > max_cache_size - 10:
         cache.popleft()
 
     # Добавляем файлы в кеш
