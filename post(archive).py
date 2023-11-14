@@ -4,7 +4,7 @@ import config
 
 
 def start_posting():
-    choice = random.choices(config.anime_list, weights=[item[2] for item in config.anime_list], k=1)[0]
+    choice = random.choices(config.my_list, weights=[item[2] for item in config.my_list], k=1)[0]
     print(choice)
     files = os.listdir(choice[1])
     out = []
