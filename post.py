@@ -47,6 +47,12 @@ def start_posting():
     # Получаем список файлов в выбранном каталоге
     files = os.listdir(choice[1])
 
+    if choice[3].lower() == 'auto':
+        total_files = len(files)
+        max_cache_size = int(0.9 * total_files) if total_files > 100 else total_files - 10
+    else:
+        max_cache_size = choice[3]
+        
     # Получаем или создаем кеш для данного пути
     cache = load_cache(choice[1], choice[3])
 
