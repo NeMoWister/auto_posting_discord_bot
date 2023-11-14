@@ -16,6 +16,7 @@
     # config.py
     token = 'your discord token'
     my_list = [('name', 'path', chance, max_cache_size)]
+    channel_id = int # id вашего дискорд канала
     ```
     Рекомендую max_cache_size ставить близко к общему количеству файлов в папке 
     
