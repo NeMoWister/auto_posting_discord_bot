@@ -10,7 +10,7 @@ def on_button_click():
     selected_channel = dropdown2.get()
 
     anime_list_data = next((anime for anime in data['anime_list'] if anime['name'].lower() == selected_anime.lower()), None)
-    channel_data = next((channel for channel in data['channel_id'] if channel['name'] == selected_channel), None)
+    channel_data = next((channel for channel in data['channel_id'] if channel['name'].lower() == selected_channel.lower()), None)
 
     new_data = {'anime_list': [anime_list_data],
                 'channel_id': [channel_data],
