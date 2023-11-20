@@ -1,10 +1,10 @@
-import random
-import os
-import config
-from collections import deque
-import pickle
 import hashlib
+import os
+import pickle
+import random
+from collections import deque
 
+import config
 
 # Путь к основной папке, где будут храниться кеши
 CACHE_FOLDER_PATH = "caches"
@@ -41,29 +41,35 @@ def save_cache(anime_path, cache):
         print(f"Ошибка при сохранении кеша для {anime_path}: {e}")
 
 
-def start_posting():
+def start_posting(data):
     # Выбираем аниме на основе весов
-    choice = random.choices(config.anime_list, weights=[item[2] for item in config.anime_list], k=1)[0]
-    print(choice)
+    choice = random.choices(data['anime_list'], weights=[item['chance'] for item in data['anime_list']], k=1)[0]
+    # print(choice)
 
     # Получаем список файлов в выбранном каталоге аниме
-    files = os.listdir(choice[1])
+    files = os.listdir(choice['path'])
+
+    if choice['cache'].lower() == 'auto':
+        total_files = len(files)
+        max_cache_size = int(0.9 * total_files) if total_files > 100 else int(0.9 * total_files) - 11
+    else:
+        max_cache_size = choice['cache']
 
     # Получаем или создаем кеш для данного пути аниме
-    cache = load_cache(choice[1], choice[3])
+    cache = load_cache(choice['path'], max_cache_size)
 
     # Инициализируем пустой список для хранения выбранных файлов
     out = []
 
     while len(out) != 10:
         # Составляем путь к файлу
-        file = choice[1] + '/' + random.choice(files)
+        file = choice['path'] + '/' + random.choice(files)
 
         # Проверяем, что файл не находится в кеше и является допустимым файлом
         if file not in out and file not in cache and os.path.isfile(file):
             out.append(file)
 
-    while len(cache) > choice[3] - 10:
+    while len(cache) > max_cache_size - 10:
         cache.popleft()
 
     # Добавляем файлы в кеш
@@ -72,7 +78,6 @@ def start_posting():
     # Удаляем старые значения, если кеш превысил максимальный размер
 
     # Сохраняем кеш после каждого вызова start_posting
-    save_cache(choice[1], cache)
+    save_cache(choice['path'], cache)
 
-    print(out)
-    return [choice[0], out]
+    return [choice['name'], out]

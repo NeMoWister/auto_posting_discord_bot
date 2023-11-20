@@ -1,0 +1,75 @@
+{
+  "anime_list": [
+    {
+      "name": "\u043f\u044f\u0442\u044c \u043d\u0435\u0432\u0435\u0441\u0442",
+      "path": "D:/YandexDisk/\u041f\u0435\u0440\u0435\u0435\u0437\u0434/\u043f\u044f\u0442\u044c \u043d\u0435\u0432\u0435\u0441\u0442",
+      "chance": 0.1,
+      "cache" :"auto"
+    },
+    {
+      "name": "\u043c\u0438\u043b\u044b\u0439 \u0432\u043e \u0444\u0440\u0430\u043d\u043a\u0441\u0435",
+      "path": "D:/YandexDisk/\u041f\u0435\u0440\u0435\u0435\u0437\u0434/frankxx",
+      "chance": 0.05,
+      "cache": "auto"
+    },
+    {
+      "name": "\u0440\u0430\u0437\u043d\u043e\u0435",
+      "path": "D:/YandexDisk/\u041f\u0435\u0440\u0435\u0435\u0437\u0434/\u0430\u0440\u0442\u044b",
+      "chance": 0.15,
+      "cache": "auto"
+    },
+    {
+      "name": "\u0432\u043e\u043b\u0447\u0438\u0446\u0430 \u0438 \u043f\u0440\u044f\u043d\u043e\u0441\u0442\u0438",
+      "path": "D:/YandexDisk/\u041f\u0435\u0440\u0435\u0435\u0437\u0434/\u0412\u043e\u043b\u0447\u0438\u0446\u0430",
+      "chance": 0.05,
+      "cache": "auto"
+    },
+    {
+      "name": "\u0441\u0440\u0435\u043d\u0448\u0438\u043d",
+      "path": "D:/YandexDisk/\u041f\u0435\u0440\u0435\u0435\u0437\u0434/\u0433\u0435\u043d\u0448\u0438\u043d",
+      "chance": 0.1,
+      "cache": "auto"
+    },
+    {
+      "name": "\u043a\u0430\u0433\u0443\u044f",
+      "path": "D:/YandexDisk/\u041f\u0435\u0440\u0435\u0435\u0437\u0434/\u043a\u0430\u0433\u0443\u044f",
+      "chance": 0.1,
+      "cache": "auto"
+    },
+    {
+      "name": "\u043a\u0443\u043a\u043b\u0430",
+      "path": "D:/YandexDisk/\u041f\u0435\u0440\u0435\u0435\u0437\u0434/\u043a\u0443\u043a\u043b\u0430",
+      "chance": 0.1,
+      "cache": "auto"
+    },
+    {
+      "name": "\u0444\u0435\u0439\u0442\u0430\u043d",
+      "path": "D:/YandexDisk/\u041f\u0435\u0440\u0435\u0435\u0437\u0434/\u0444\u0435\u0439\u0442",
+      "chance": 0.2,
+      "cache": "auto"
+    },
+    {
+      "name": "\u0442\u0441\u0443\u043a\u0438\u0445\u0438\u043c\u0435",
+      "path": "D:/YandexDisk/\u041f\u0435\u0440\u0435\u0435\u0437\u0434/\u0442\u0441\u0443\u043a\u0438\u0445\u0438\u043c\u0435",
+      "chance": 0.1,
+      "cache": "auto"
+    },
+    {
+      "name": "\u0433\u043b\u0443\u043f\u044b\u0439 \u0441\u0432\u0438\u043d",
+      "path": "D:/YandexDisk/\u041f\u0435\u0440\u0435\u0435\u0437\u0434/\u0413\u043b\u0443\u043f\u044b\u0439 \u0441\u0432\u0438\u043d",
+      "chance": 0.05,
+      "cache": "auto"
+    }
+  ],
+  "channel_id": [
+    {
+      "id": 983601118590423080,
+      "name": "\u0412\u0413"
+    },
+    {
+      "id": 1175259827639959663,
+      "name": "Literally me"}
+  ],
+  "token": "OTU0OTE2NjkyNzI1NzYwMDYw.Go78KP.MAg69HfB49huSEb_zVOMboJCfebED5WmlLnLIs",
+  "number_of_starts": 1
+}
